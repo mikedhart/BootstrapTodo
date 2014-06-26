@@ -5,3 +5,9 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+["Active", "Completed", "Archived"].each{ |c| Status.create!(name: c) unless Status.where(name: c).size > 0 }
+User.create!(
+	email: "shipper@list.com",
+	password: "pleaseletmein",
+	password_confirmation: "pleaseletmein"
+)
