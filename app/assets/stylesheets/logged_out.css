@@ -1,0 +1,49 @@
+/*= require normalize */
+/*= require_self */
+html{ font-size: 100%; } 
+body { font-family: "Proxima Nova Rg" }
+.wrap {
+	width: 50%;
+	margin: 0 auto;
+	text-align: center;
+}
+.wrap form {
+	width: 90%;
+	margin: 0 auto;
+}
+input {
+	width: 100%;	
+}
+header {
+	overflow: hidden;
+	height: 100px;	
+	width: 90%;
+	padding: 16px 5%;
+	padding: 1rem 5%;
+}
+header h1 {
+	width: 120px;
+	height: 40px;
+	display: block;
+	background: url(/assets/logo_logged_out.png);
+	margin: 5px 0;
+	color: #ec696b;
+	float: left;
+	text-indent: -9999px;
+}
+header nav {
+	width: 50%;
+	float: right;
+	text-align: right;
+}
+header nav a:link, header nav a:visited {
+	border: thin solid #ec696b;
+	border-radius: 10px;
+	padding: 8px 1%;
+	color: #ec696b;
+	text-decoration: none;
+}
+h2 {
+	color: #ec696b;
+}
+.clear { clear: both; }

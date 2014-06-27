@@ -32,7 +32,7 @@ class ItemsController < ApplicationController
 
     respond_to do |format|
       if @item.save
-        format.html { redirect_to list_items_path(@list), notice: 'Item was successfully created.' }
+        format.html { redirect_to edit_list_path(@list), notice: 'Item was successfully created.' }
         format.json { render action: 'show', status: :created, location: @item }
       else
         format.html { render action: 'new' }
@@ -60,7 +60,7 @@ class ItemsController < ApplicationController
   def destroy
     @item.destroy
     respond_to do |format|
-      format.html { redirect_to list_items_url(@list) }
+      format.html { redirect_to edit_list_url(@list) }
       format.json { head :no_content }
     end
   end

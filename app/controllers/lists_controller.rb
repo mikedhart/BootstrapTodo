@@ -19,6 +19,7 @@ class ListsController < ApplicationController
 
   # GET /lists/1/edit
   def edit
+		@new_item = Item.new
   end
 
   # POST /lists
@@ -70,6 +71,6 @@ class ListsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def list_params
-      params.require(:list).permit(:user_id, :name)
+      params.require(:list).permit(:user_id, :name, items_attributes: [:name, :mark_complete, :id])
     end
 end
