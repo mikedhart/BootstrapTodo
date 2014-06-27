@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140626183122) do
+ActiveRecord::Schema.define(version: 20140627164949) do
 
   create_table "items", force: true do |t|
     t.integer  "list_id",    default: 0,  null: false
@@ -27,7 +27,6 @@ ActiveRecord::Schema.define(version: 20140626183122) do
     t.string   "name",       default: "", null: false
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "status_id",               null: false
   end
 
   create_table "statuses", force: true do |t|

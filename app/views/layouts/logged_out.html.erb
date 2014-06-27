@@ -26,14 +26,18 @@
 				<h1>Dingly</h1>
 
 				<nav>
-					<%= link_to "Login", new_user_session_path %>
+					<% if request.fullpath.include?("sign_up") then %>
+						<%= link_to "Login", new_user_session_path %>
+					<% else %>
+						<%= link_to "Sign Up", new_user_registration_path %>
+					<% end %>
 				</nav>
 			</header>
 			
 			<div class="clear"></div>
 			
 			<%= content_tag :div, class: "wrap" do %>
-				<h2>Find out what you and the people you care about need</h2>
+				<h2>Find out what you and the people you care about need.</h2>
 				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
 				<%= yield %>
 			<% end %>

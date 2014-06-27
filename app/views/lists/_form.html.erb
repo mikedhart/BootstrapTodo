@@ -1,21 +1,20 @@
-<%= form_for(@list) do |f| %>
-  <% if @list.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@list.errors.count, "error") %> prohibited this list from being saved:</h2>
+<%= form_for(@list, remote: true) do |f| %>
+	<%= f.text_field :name, autocomplete: false %>
 
-      <ul>
-      <% @list.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+	<%= content_tag :ul, class: "list" do %>
+		<%= f.fields_for :items do |b| %>
+			<%= content_tag :li do %>
+				<%= b.check_box :mark_complete %>
+				<%= b.text_field :name, class: b.object.status.name.downcase %>
+				
+				<%= link_to list_item_path(@list, b.object), method: :delete, class: "destroy_item" do %>
+					<%= content_tag :i, nil, class: "fa fa-trash-o" %>
+				<% end %>
+			<% end %>
+		<% end %>
+	<% end %>
+<% end %>
 
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+<%= form_for @new_item, url: list_items_path(@list) do |f| %>
+	<%= f.text_field :name, placeholder: "Type item then press enter", id: "new_item_name" %>
 <% end %>

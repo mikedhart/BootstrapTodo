@@ -5,6 +5,8 @@ class ListsController < ApplicationController
   # GET /lists.json
   def index
     @lists = current_user.lists
+
+		redirect_to action: "new" if @lists.size < 1
   end
 
   # GET /lists/1
@@ -15,6 +17,7 @@ class ListsController < ApplicationController
   # GET /lists/new
   def new
     @list = List.new
+		@new_item = Item.new
   end
 
   # GET /lists/1/edit
@@ -30,7 +33,7 @@ class ListsController < ApplicationController
 
     respond_to do |format|
       if @list.save
-        format.html { redirect_to @list, notice: 'List was successfully created.' }
+        format.html { redirect_to edit_list_path(@list), notice: 'List was successfully created.' }
         format.json { render action: 'show', status: :created, location: @list }
       else
         format.html { render action: 'new' }
