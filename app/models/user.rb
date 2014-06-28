@@ -13,6 +13,9 @@ class User < ActiveRecord::Base
 	private
 
 	def append_invites
-		ListInvite.where(email: email).all.each{ |i| ListUser.create!(list: i.list, user: self) }
+		ListInvite.where(email: email).all.each do |i|
+			ListUser.create!(list: i.list, user: self)
+			i.update(complete: true)
+		end
 	end
 end
