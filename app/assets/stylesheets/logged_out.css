@@ -1,5 +1,5 @@
-/*= require normalize */
 /*= require_self */
+/*= require normalize */
 html{ font-size: 100%; } 
 body { font-family: "Proxima Nova Rg" }
 .wrap {
