@@ -1,5 +1,5 @@
-Hi <%= @invite.email %>,
+<p>Hi <%= @invite.email %>,</p>
 
-<%= @invite.user.email %> has invited you to join the <%= @invite.list.name %> list on Dingy!
+<p><%= @invite.user.email %> has invited you to join the <%= @invite.list.name %> list on Dingy!</p>
 
-<%= link_to "Click here", "http://localhost:3000/users/sign_up?email=#{ @invite.email }" %> to join the list!
+<p><%= link_to "Click here", "http://localhost:3000/users/sign_up?email=#{ @invite.email }" %> to join the list!</p>
