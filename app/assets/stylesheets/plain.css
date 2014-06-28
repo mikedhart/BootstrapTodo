@@ -1,0 +1,75 @@
+
+html{ font-size: 100%; } 
+body { font-family: "Proxima Nova Rg" }
+.wrap {
+	width: 50%;
+	margin: 0 auto;
+	text-align: center;
+}
+.wrap form {
+	width: 65%;
+	margin: 0 auto;
+	margin-top: 64px;
+	margin-top: 4rem;
+}
+input[type=email], input[type=password], input[type=submit] {
+	width: 94%;
+	padding: 16px 3%;
+	padding: 1rem 3%;
+	background: #eee;
+	border: none;
+	border-radius: 5px;
+	margin-bottom: 16px;
+	margin-bottom: 1rem;
+	outline: none;
+}
+input[type=submit] {
+	background: #ec696b;
+	color: #fff;
+	width: 100%;
+}
+header {
+	overflow: hidden;
+	height: 100px;	
+	width: 90%;
+	padding: 16px 5%;
+	padding: 1rem 5%;
+}
+header h1 {
+	width: 120px;
+	height: 40px;
+	display: block;
+	background: url(/assets/logo_logged_out.png);
+	margin: 5px 0;
+	color: #ec696b;
+	float: left;
+	text-indent: -9999px;
+}
+header nav {
+	width: 50%;
+	float: right;
+	text-align: right;
+	margin-top: 16px;
+	margin-top: 1rem;
+}
+header nav a:link, header nav a:visited {
+	border: 2px solid #ec696b;
+	border-radius: 10px;
+	padding: 8px 2%;
+	color: #ec696b;
+	text-decoration: none;
+	font-size: 20px;
+}
+h2 {
+	color: #ec696b;
+	font-size: 48px;
+	margin-bottom: 16px;
+	margin-bottom: 1rem;
+}
+p {
+	color: #5d5d5d;
+	line-height: 180%;
+	font-size: 18px;
+	font-size: 1.13rem;
+}
+.clear { clear: both; }
