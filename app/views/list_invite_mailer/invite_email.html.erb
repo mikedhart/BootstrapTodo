@@ -1,0 +1,5 @@
+Hi <%= @invite.email %>,
+
+<%= @invite.user.email %> has invited you to join the <%= @invite.list.name %> list on Dingy!
+
+<%= link_to "Click here", "http://localhost:3000/users/sign_up?email=#{ @invite.email }" %> to join the list!

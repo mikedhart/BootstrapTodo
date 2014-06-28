@@ -5,6 +5,7 @@ class ListsController < ApplicationController
   # GET /lists.json
   def index
     @lists = current_user.lists
+		@invites = ListInvite.where(email: current_user.email, complete: false)
 
 		redirect_to action: "new" if @lists.size < 1
   end
@@ -33,6 +34,7 @@ class ListsController < ApplicationController
 
     respond_to do |format|
       if @list.save
+				ListUser.create!(user: current_user, list: @list)
         format.html { redirect_to edit_list_path(@list), notice: 'List was successfully created.' }
         format.json { render action: 'show', status: :created, location: @list }
       else

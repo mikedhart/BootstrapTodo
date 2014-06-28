@@ -1,0 +1,33 @@
+<h1>Listing list_invites</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>List</th>
+      <th>User</th>
+      <th>Email</th>
+      <th>Complete</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @list_invites.each do |list_invite| %>
+      <tr>
+        <td><%= list_invite.list_id %></td>
+        <td><%= list_invite.user_id %></td>
+        <td><%= list_invite.email %></td>
+        <td><%= list_invite.complete %></td>
+        <td><%= link_to 'Show', list_invite %></td>
+        <td><%= link_to 'Edit', edit_list_invite_path(list_invite) %></td>
+        <td><%= link_to 'Destroy', list_invite, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New List invite', new_list_invite_path %>

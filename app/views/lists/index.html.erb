@@ -1,9 +1,10 @@
-<h1>Listing lists</h1>
+<h1>My Lists</h1>
 
 <table>
   <thead>
     <tr>
       <th>Name</th>
+      <th>Share</th>
       <th></th>
     </tr>
   </thead>
@@ -12,6 +13,7 @@
     <% @lists.each do |list| %>
       <tr>
         <td><%= link_to list.name, edit_list_path(list) %></td>
+        <td><%= link_to "Invite", new_list_invite_path(list_id: list) %></td>
         <td><%= link_to 'Delete list', list, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
@@ -19,5 +21,30 @@
 </table>
 
 <br>
+
+<% if @invites.size > 0 %>
+<h1>My Invites</h1>
+
+<table>
+	<thead>
+		<tr>
+			<td>Invited by</td>
+			<td>Join</td>
+		</tr>
+	</thead>
+	<tbody>
+		<% @invites.each do |i| %>
+			<tr>
+				<td><%= i.user.email %></td>
+				<td>
+					<%= form_for i do |f| %>
+						<%= f.hidden_field :complete, value: true %>
+						<%= f.submit "Join" %>
+					<% end %>
+			</tr>
+		<% end %>
+	</tbody>
+</table>
+<% end %>
 
 <%= link_to 'New List', new_list_path %>

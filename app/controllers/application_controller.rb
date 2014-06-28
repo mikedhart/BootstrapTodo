@@ -5,4 +5,8 @@ class ApplicationController < ActionController::Base
 	before_action :authenticate_user!
 
 	layout -> { params[:controller].include?("devise") ? "logged_out" : "application" }
+	
+	# See after_sign_in_path_for
+	#def after_sign_in_path_for(resource)
+	#end
 end

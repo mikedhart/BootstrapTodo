@@ -1,4 +1,8 @@
 BootstrapTodo::Application.routes.draw do
+  resources :list_users
+
+  resources :list_invites
+
   resources :statuses
 
 
