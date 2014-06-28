@@ -1,7 +1,10 @@
+body.out { background: #fff; }
 body.out .wrap {
 	width: 50%;
 	margin: 0 auto;
 	text-align: center;
+	background: transparent;
+	border: none;
 }
 body.out .wrap form {
 	width: 65%;
@@ -31,6 +34,7 @@ body.out header {
 	width: 90%;
 	padding: 16px 5%;
 	padding: 1rem 5%;
+	background: transparent;
 }
 body.out header h1 {
 	width: 120px;
